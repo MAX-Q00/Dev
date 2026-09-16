@@ -4,7 +4,7 @@ CLI tooling for MAX-Q00. TypeScript + Node.js, wired so a local `npx` / package 
 
 ## Requirements
 
-- Node.js 18+
+- Node.js 22.12+
 - npm
 
 ## Install
@@ -42,6 +42,7 @@ Version:
 ```bash
 npx maxq-dev version
 npx maxq-dev --version
+npx maxq-dev -v
 ```
 
 ```text

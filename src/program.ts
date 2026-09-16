@@ -9,7 +9,7 @@ export function createProgram(): Command {
   program
     .name(config.name)
     .description("CLI tooling for MAX-Q00")
-    .version(config.version);
+    .version(config.version, "-v, --version");
 
   program
     .command("hello")
