@@ -10,6 +10,7 @@ const pkg = JSON.parse(
   readFileSync(path.join(testDir, "../package.json"), "utf8"),
 );
 const cli = path.join(testDir, "../dist/index.js");
+const bin = path.join(testDir, "../bin/maxq-dev.js");
 
 function runCli(...args) {
   return spawnSync(process.execPath, [cli, ...args], {
@@ -39,4 +40,12 @@ test("-v prints the package version", () => {
   const result = runCli("-v");
   assert.equal(result.status, 0, result.stderr);
   assert.equal(result.stdout.trim(), pkg.version);
+});
+
+test("package bin hello works", () => {
+  const result = spawnSync(process.execPath, [bin, "hello"], {
+    encoding: "utf8",
+  });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(result.stdout.trim(), `Hello from ${pkg.name} v${pkg.version}`);
 });

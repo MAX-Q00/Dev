@@ -13,13 +13,15 @@ CLI tooling for MAX-Q00. TypeScript + Node.js, wired so a local `npx` / package 
 npm install
 ```
 
+This also compiles `src/` to `dist/` via the `prepare` script.
+
 ## Build
 
 ```bash
 npm run build
 ```
 
-This compiles `src/` to `dist/`.
+Rebuild after changing TypeScript sources.
 
 ## Run
 
@@ -68,10 +70,12 @@ npx maxq-dev --help
 
 ```text
 src/
-  index.ts           CLI entry (package bin)
+  index.ts           CLI implementation entry
   program.ts         Commander program
   config.ts          Package name + version
   commands/hello.ts  hello command
+bin/
+  maxq-dev.js        Package bin (npx / npm)
 test/
   cli.test.js        Spawns the compiled CLI
 ```

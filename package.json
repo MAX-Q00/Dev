@@ -5,13 +5,15 @@
   "private": true,
   "type": "module",
   "bin": {
-    "maxq-dev": "dist/index.js"
+    "maxq-dev": "bin/maxq-dev.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "start": "node dist/index.js",
     "dev": "npm run build && node dist/index.js",
     "test": "npm run build && node --test test/*.test.js"
