@@ -4,6 +4,7 @@
   "description": "CLI tooling for MAX-Q00",
   "private": true,
   "type": "module",
+  "main": "dist/index.js",
   "bin": {
     "maxq-dev": "bin/maxq-dev.js"
   },
