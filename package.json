@@ -1,0 +1,36 @@
+{
+  "name": "maxq-dev",
+  "version": "0.1.0",
+  "description": "CLI tooling for MAX-Q00",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "maxq-dev": "bin/maxq-dev.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "npm run build && node dist/index.js",
+    "test": "npm run build && node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "cli",
+    "maxq"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "commander": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "typescript": "^7.0.2"
+  }
+}
